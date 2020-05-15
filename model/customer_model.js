@@ -16,7 +16,7 @@ var customer={
         return db.query("update customer_tbl set Username=?,Gender=?,Age=?,Mobile=?,City=?,Address=? where Email_Id=?",[item.Username,item.Gender,item.Age,item.Mobile,item.City,item.Address,id],callback);
     },
     changepass:function(item,callback){
-        return db.query("update user customer_tbl Password=? where Email_Id=?",[item.Password,item.Email_Id],callback);
+        return db.query("update customer_tbl set Password=? where Email_Id=?",[item.Password,item.Email_Id],callback);
     }
 };
 module.exports=customer;

@@ -10,6 +10,13 @@ var usersRouter = require('./routes/users');
 
 var customer=require('./routes/customer_route');
 var signup=require('./routes/signup_route');
+var category=require('./routes/category_route');
+var order=require('./routes/order_route');
+var orderlimit=require('./routes/orderlimit_route');
+var myorder=require('./routes/myorder_route');
+var product=require('./routes/product_route');
+var probycat=require('./routes/productbycat_route');
+var probycatid=require('./routes/productbycatid_route');
 
 var app = express();
 
@@ -29,6 +36,13 @@ app.use('/users', usersRouter);
 
 app.use('/customer',customer);
 app.use('/signup',signup);
+app.use('/category',category);
+app.use('/order',order);
+app.use('/orderlimit',orderlimit);
+app.use('/myorder',myorder);
+app.use('/product',product);
+app.use('/probycat',probycat);
+app.use('/probycatid',probycatid);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
