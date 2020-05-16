@@ -4,7 +4,8 @@ var order={
         return db.query("select * from order_tbl",callback);
     },
     addOrder:function(item,callback){
-        return db.query("insert into order_tbl values (?,?,?,?,?,?)",[item.O_id,item.O_amount,item.FK_P_id,item.FK_Email_id,item.O_date,item.O_status],callback);
+        var date=new Date();
+        return db.query("insert into order_tbl values (?,?,?,?,?,?)",[item.O_id,item.O_amount,item.FK_P_id,item.FK_Email_id,date,item.O_status],callback);
     },
     updateOrder:function(soh,item,callback){
         return db.query("update product_tbl set P_soh=? where P_id=?",[soh,item.P_id],callback);
